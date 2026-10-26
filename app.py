@@ -1,6 +1,6 @@
-"""The Barbarous Relic Exchange: a Real Exchange Rate explorer on IMF data.
+"""The Sound Money Exchange: a Real Exchange Rate explorer on IMF data.
 
-Satirical gold-and-crypto skin over serious arithmetic.
+Satire: a sincere gold-bug / crypto-maximalist persona over standard textbook arithmetic.
 
 Definitions (all monthly):
     S(t)      = units of Country 2 currency per ONE unit of Country 1 currency
@@ -159,51 +159,56 @@ for _line in _COUNTRY_TABLE.strip().splitlines():
 TH = {
     "bg": "#0D0B14", "panel": "#17131F", "text": "#F3E7C3",
     "gold": "#F5C542", "orange": "#F7931A", "purple": "#9945FF", "red": "#FF5C5C",
-    "page_title": "The Barbarous Relic Exchange",
+    "page_title": "The Sound Money Exchange",
     "icon": "🪙",
 }
+# Persona: a sincere gold-bug / crypto maximalist. The jokes are in the confidence.
 TXT = {
-    "title": "🪙 The Barbarous Relic Exchange ₿",
-    "tagline": "Gold and crypto: two assets that pay no dividend, now united by a real exchange "
-               "rate calculator that does. (Keynes called gold a barbarous relic. "
-               "He never saw the memecoins.)",
-    "h_countries": "Step 1: Pick two fiat currencies (yes, fiat. Deal with it.)",
-    "h_dates": "Step 2: Choose your sample period (HODL window)",
-    "h_view": "Step 3: Pick your view of reality",
-    "h_chart": "The Chart Formerly Known as a Whitepaper",
-    "h_download": "Take the receipts home",
+    "title": "🪙 The Sound Money Exchange ₿",
+    "tagline": "The only real exchange rate calculator for people who know that gold and Bitcoin "
+               "are the future, and that every currency below is a government IOU in slow "
+               "motion collapse. We use their data only to document the crime scene.",
+    "h_countries": "Step 1: Pick two doomed fiat currencies (we're documenting the collapse)",
+    "h_dates": "Step 2: Choose your sample period (how long you've been robbed)",
+    "h_view": "Step 3: Real (the truth), Nominal (the lies), or Both (the whole scam)",
+    "h_chart": "Exhibit A: The Fiat Crime Scene",
+    "h_download": "Download the evidence (for your case against the central bank)",
     "ticker": [
-        "GOLD: still pays 0% dividend since 3000 BC",
-        "BTC: 'digital gold' (volatility: not gold-like)",
-        "PPP: holds in the long run (long run not included)",
-        "USD: still the reserve currency, sorry",
-        "NFT of this chart: sold out (to nobody)",
-        "STABLECOIN: peg status unknown, ask again in an hour",
-        "CENTRAL BANKS: not worried",
-        "HODL: Hold On for Dear Life, an investment philosophy",
+        "GOLD: 5,000 years undefeated (zero yield, zero problems)",
+        "BTC: hard cap of 21 million. Fiat: cap decided at Tuesday's meeting",
+        "FIAT: down 99 percent since 1913 (ignore the wages, ignore the GDP)",
+        "THE GOLD STANDARD: worked great (do not look up 1929)",
+        "NOT YOUR KEYS, NOT YOUR COINS",
+        "STABLECOIN: 100 percent backed by trust me bro",
+        "TETHER AUDIT: coming soon",
+        "CENTRAL BANKERS: seething",
+        "VOLATILITY: not a bug, it is price discovery",
+        "HAVE FUN STAYING POOR",
     ],
     "loading": [
-        "Mining IMF data (consuming the electricity of a small nation)...",
-        "Consulting the gold bugs. They said 'buy more gold.' Ignoring them...",
-        "Waiting for six block confirmations from the IMF...",
-        "Polishing the barbarous relic...",
-        "Asking a laser-eyed influencer. Declined to comment, wants your seed phrase...",
+        "Running a full node on the IMF (and on your last nerve)...",
+        "Checking the Fed's homework. It is not gold-backed, so it is wrong...",
+        "Mining data (the electricity is worth it, trust me bro)...",
+        "Converting your fiat into something real... just kidding, it is still fiat. Loading...",
+        "Asking a laser-eyed influencer to verify the data. He says buy...",
     ],
-    "empty": "No data. Much like the utility of a Bored Ape.",
-    "error_prefix": "Even the blockchain wouldn't confirm this one.",
-    "same_country": "Same country twice? That is a stablecoin pegged to itself. "
-                    "RER is trivially constant, so pick two different economies.",
-    "bad_dates": "Start month is after end month. Time travel is a feature of "
-                 "the whitepaper only.",
+    "empty": "No data. The central bankers are hiding it. (Realistically, the IMF's "
+             "coverage is patchy for this series.)",
+    "error_prefix": "FUD detected.",
+    "same_country": "Same fiat currency twice? That's a double-spend of one IOU. "
+                    "Pick two different economies so we can compare two failures.",
+    "bad_dates": "Start month is after end month. You cannot go back in time, "
+                 "not even with a hardware wallet.",
     "chart_titles": {
-        "Real": "Real Index: how far from the PPP promised land? (100 = sample average)",
-        "Nominal": "Nominal S(t): the number that goes up and down on every screen",
-        "Both": "Real vs. Nominal: the sober and the speculative",
+        "Real": "Real Index: fiat's purchasing power, exposed (100 = RER*, the sample average)",
+        "Nominal": "Nominal S(t): two failing IOUs in a race to the bottom",
+        "Both": "Real vs. Nominal: the number goes up, the number goes down, gold stays gold",
     },
-    "hline": "100 = RER* ('PPP holds in the long run.' - Everyone, forever)",
-    "spinner_done": "Data mined, no GPUs harmed.",
-    "disclosure": "**Not financial advice.** Not even advice. Gold and crypto appear in this "
-                  "app strictly as punchlines. The arithmetic, however, is real.",
+    "hline": "100 = RER*, the 'long-run PPP' fiat economists cope with. Gold needs no PPP.",
+    "spinner_done": "Data fetched. Satoshi-approved. (Satoshi has not approved this.)",
+    "disclosure": "**Not financial advice, but you should absolutely sell your pension and buy "
+                  "the dip.** (Please don't. This is satire. The economics in the explainer "
+                  "is standard textbook RER, and the arithmetic is real.)",
 }
 
 
@@ -516,16 +521,28 @@ def main() -> None:
     ids = sorted(countries, key=lambda k: countries[k])
 
     with st.sidebar:
-        st.header("📜 How to read this")
+        st.header("📜 How to read this (sound money edition)")
         st.markdown(
             "- **Real Index > 100:** Country 1's goods are relatively *expensive* vs. Country 2's, "
-            "compared with the sample average (real appreciation of Country 1's currency).\n"
-            "- **Real Index < 100:** real depreciation of Country 1's currency.\n"
+            "compared with the sample average (real appreciation of Country 1's currency). "
+            "Gold bugs read this as 'one IOU is rotting slower than the other.'\n"
+            "- **Real Index < 100:** real depreciation of Country 1's currency. Gold bugs read "
+            "this as 'told you so.' (They read everything that way.)\n"
             "- CPI base years differ across countries, so the index is normalized to the "
-            "sample-average RER*. Levels are only meaningful relative to that average.\n"
+            "sample-average RER*. We use fiat CPI only to document the crime scene.\n"
             "- **S(t)** = Country 2 currency units per 1 Country 1 currency unit.\n"
-            "- PPP holds in the long run. How long? Longer than your portfolio's drawdown."
+            "- PPP holds in the long run. Gold bugs: 'the long run is now.' "
+            "Economists: 'the long run is long.'"
         )
+        with st.expander("Why gold and Bitcoin are better (an incomplete list)"):
+            st.markdown(
+                "- **Gold:** 5,000 years of price stability.* (*Not measured. Please do not measure.)\n"
+                "- **Bitcoin:** hard cap of 21 million, so deflation is not a problem, "
+                "it is called 'appreciation.'\n"
+                "- **Volatility:** not a bug, price discovery.\n"
+                "- **Real exchange rates:** unnecessary if everyone just used gold. "
+                "This app would not exist. Please enjoy it while it lasts."
+            )
         st.divider()
         st.markdown(TXT["disclosure"])
 
@@ -598,10 +615,10 @@ def main() -> None:
     m = st.columns(5)
     m[0].metric("RER* (sample mean)", f"{rer_star:,.4f}")
     m[1].metric("Valid months", f"{n_valid}")
-    m[2].metric("Dropped months", f"{n_drop}")
+    m[2].metric("Dropped months", f"{n_drop}", help="Months the central bank deleted (or the IMF did not report).")
     last = df["real_index"].dropna()
     m[3].metric("Latest Real Index", f"{last.iloc[-1]:.2f}")
-    m[4].metric("Rug-pull range (max - min)", f"{last.max() - last.min():.1f} pts")
+    m[4].metric("Fiat volatility range (max - min)", f"{last.max() - last.min():.1f} pts", help="Gold bugs call this the scam. Economists call it variation.")
     st.caption(f"Rows span {df.index.min():%b %Y} to {df.index.max():%b %Y} (where any data exists). "
                f"Dropped months are missing at least one of S, P1, P2; nothing is interpolated. "
                f"{TXT['spinner_done']}")
@@ -620,7 +637,7 @@ def main() -> None:
     st.download_button("⬇️ Download CSV (every observation and calculation)",
                        out.to_csv(index=False).encode("utf-8"),
                        file_name=f"rer_{iso1}_{iso2}_{start:%Y%m}_{end:%Y%m}.csv", mime="text/csv")
-    with st.expander("Peek at the ledger (last 24 rows)"):
+    with st.expander("Peek at the ledger (it is basically the blockchain, but a CSV)"):
         st.dataframe(out.tail(24), use_container_width=True)
 
 

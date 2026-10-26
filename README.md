@@ -1,6 +1,6 @@
-# The Barbarous Relic Exchange 🪙₿
+# The Sound Money Exchange 🪙₿
 
-A Streamlit app that computes and plots the **real exchange rate (RER)** between any two IMF economies (or the Euro area) from monthly IMF CPI and exchange-rate data. The skin is a satire of gold bugs and crypto bros. The arithmetic is not.
+A Streamlit app that computes and plots the **real exchange rate (RER)** between any two IMF economies (or the Euro area) from monthly IMF CPI and exchange-rate data. The skin is satire: a sincere gold-bug / crypto-maximalist persona who insists that gold and Bitcoin are sound money and that fiat currencies are doomed IOUs. The economics underneath is standard textbook RER, and the arithmetic is real.
 
 ## What it does
 
@@ -55,7 +55,7 @@ base = "dark"
 
 ## Changing the theme
 
-All colors are in the `TH` dictionary and all jokes, titles, headings, loading messages and chart titles are in the `TXT` dictionary near the top of `app.py`. Edit them freely. Fonts are loaded in `inject_theme()`.
+All colors are in the `TH` dictionary and all jokes, titles, headings, ticker lines, loading messages and chart titles are in the `TXT` dictionary near the top of `app.py`. Edit them freely, or turn the persona's confidence up or down. Fonts are loaded in `inject_theme()`.
 
 ## Assumptions about the IMF API
 
@@ -70,9 +70,3 @@ The app was written without a guarantee of the live API's exact shape, so it is 
 - CPI levels from different countries have different base years; only the normalized Real Index is comparable across pairs.
 - API rate limits, outages or format changes may produce warnings. Results are cached for 6 hours; failures are not cached.
 - RER* is a sample average, not a theoretical equilibrium. PPP holds in the long run, apparently.
-
-## Prompt used / model / date
-
-- Prompt: _(fill in)_
-- Model: _(fill in)_
-- Date: _(fill in)_
